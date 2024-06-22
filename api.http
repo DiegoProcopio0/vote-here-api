@@ -1,0 +1,8 @@
+POST  http://localhost:3333/cadastrar
+content-type: application/json
+
+{
+    "email": "diego@mail.com",
+    "nome": "Diego Procopio",
+    "senha": "senha@12"
+}
