@@ -9,7 +9,7 @@ try {
   sequelize.authenticate();
   console.log("Conectamos com sucesso!");
 } catch (error) {
-  console.log(`Não foi possivel conectar ${error}`);
+  console.log(`Não foi possível conectar ${error}`);
 }
 
 export { sequelize };

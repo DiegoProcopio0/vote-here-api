@@ -26,7 +26,7 @@ export const registerService = async (
   });
 
   if (checkIfUserExists) {
-    return left(["O e-mail já está em uso!"]);
+    return left(["O email já está em uso!"]);
   }
 
   const hashedPassword = await PasswordCrypto.hashPassword(senha);
