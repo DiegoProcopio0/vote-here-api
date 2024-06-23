@@ -1,7 +1,7 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 
-import { RegisterLoginData, validateRegister } from "../../schemas/login";
+import { RegisterLoginData } from "../../schemas/login";
 import { registerService } from "../../services";
 
 interface IBodyProps extends Omit<RegisterLoginData, "id"> {}
@@ -18,5 +18,5 @@ export const SignUp = async (
     return res.status(StatusCodes.BAD_REQUEST).json({ errors: result.value });
   }
 
-  return res.status(StatusCodes.OK).json(result);
+  return res.status(StatusCodes.CREATED).json(result.value);
 };

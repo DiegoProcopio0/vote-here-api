@@ -1,5 +1,2 @@
-import * as SignUp from "./SignUp";
-
-export const UsuarioController = {
-  ...SignUp,
-};
+export * from "./SignUp";
+export * from "./SignIn";

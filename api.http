@@ -2,7 +2,16 @@ POST  http://localhost:3333/cadastrar
 content-type: application/json
 
 {
-    "email": "diego@mail.com",
+    "email": "diegoddxdfd1@mail.com",
     "nome": "Diego Procopio",
+    "senha": "senha@12"
+}
+
+###
+POST  http://localhost:3333/entrar
+content-type: application/json
+
+{
+    "email": "diegoddxdfd1@mail.com",
     "senha": "senha@12"
 }
