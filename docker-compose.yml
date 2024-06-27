@@ -1,34 +1,18 @@
-version: "3.3"
+version: '3.1'
 
 services:
-  app:
-    image: node:19
-    container_name: vote_here_api
-    build:
-      context: ./src
-    tty: true
-    stdin_open: true
-    command: bash
+  db:
+    image: mysql:latest
     restart: always
-    working_dir: /app
-    volumes:
-      - ./src:/app
-    depends_on:
-      - mongodb
-    ports:
-      - "3001:3001"
     environment:
-      - MONGO_URI=mongodb://mongodb:22011/VoteHereApi
-
-  mongodb:
-    image: mongo:5.0.7
-    container_name: vote_here_api_db
-    volumes:
-      - ./src:/app
-    restart: always
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vote-here-db 
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password 
     ports:
-      - "2201:2201"
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
 
-networks:
-  default:
-    name: vote_here_api_net
+volumes:
+  db_data:

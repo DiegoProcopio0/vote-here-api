@@ -1,8 +1,8 @@
 import { Sequelize } from "sequelize";
 
-const sequelize = new Sequelize({
-  dialect: "sqlite",
-  storage: "database.sqlite",
+const sequelize = new Sequelize('vote-here-db', 'root', 'root', {
+  host: 'localhost',
+  dialect: "mysql"
 });
 
 try {
